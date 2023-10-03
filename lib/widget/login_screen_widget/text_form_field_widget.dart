@@ -17,7 +17,7 @@ class TextFormFieldWidget extends StatelessWidget {
       obscureText: secure,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
-        suffixIcon: CircleAvatar(radius: 14.r, backgroundColor: AppColors.blueColor, child: Icon(Icons.done),),
+        
         border: UnderlineInputBorder(
             borderSide: BorderSide(color: AppColors.lightBlueColor)
         ),
