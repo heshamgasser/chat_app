@@ -1,4 +1,5 @@
 import 'package:chat_app/screens/login_screen.dart';
+import 'package:chat_app/screens/sign_up_screen.dart';
 import 'package:chat_app/style/app_theme.dart';
 
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class ChatApp extends StatelessWidget {
       initialRoute: LoginScreen.routeName,
       routes: {
         LoginScreen.routeName:(context) => LoginScreen(),
+        SignUpScreen.routeName:(context) => SignUpScreen(),
       },
 
 

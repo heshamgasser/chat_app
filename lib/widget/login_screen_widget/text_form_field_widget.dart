@@ -13,6 +13,7 @@ class TextFormFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: TextStyle(color: Colors.black),
       obscureText: secure,
       textInputAction: TextInputAction.next,
       decoration: InputDecoration(
@@ -34,6 +35,7 @@ class TextFormFieldWidget extends StatelessWidget {
         ),
         labelText: label,
         labelStyle: Theme.of(context).textTheme.displaySmall,
+
 
 
 

@@ -8,6 +8,7 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     scaffoldBackgroundColor: Colors.transparent,
     appBarTheme: AppBarTheme(
+
         backgroundColor: Colors.transparent,
         iconTheme: IconThemeData(color: Colors.white, size: 30.r),
         elevation: 0,
