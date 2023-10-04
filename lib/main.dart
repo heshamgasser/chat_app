@@ -1,16 +1,21 @@
 import 'package:chat_app/screens/login_screen.dart';
-import 'package:chat_app/screens/sign_up_screen.dart';
+import 'package:chat_app/screens/sign_up/sign_up_screen.dart';
 import 'package:chat_app/style/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-void main (){
-  runApp(ScreenUtilInit(
-      designSize: const Size(375, 812),
-      child: ChatApp()));
-}
+import 'firebase_options.dart';
 
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(ScreenUtilInit(designSize: const Size(375, 812), child: ChatApp()));
+}
 
 class ChatApp extends StatelessWidget {
   const ChatApp({super.key});
@@ -18,7 +23,6 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
       debugShowCheckedModeBanner: false,
 
       theme: AppTheme.lightTheme,
@@ -26,11 +30,9 @@ class ChatApp extends StatelessWidget {
 
       initialRoute: LoginScreen.routeName,
       routes: {
-        LoginScreen.routeName:(context) => LoginScreen(),
-        SignUpScreen.routeName:(context) => SignUpScreen(),
+        LoginScreen.routeName: (context) => LoginScreen(),
+        SignUpScreen.routeName: (context) => SignUpScreen(),
       },
-
-
     );
   }
 }
