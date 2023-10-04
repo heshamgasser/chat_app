@@ -7,6 +7,8 @@ import 'login_screen.dart';
 class SignUpScreen extends StatelessWidget {
  static const String routeName = 'Sign Up Screen';
 
+ GlobalKey<FormState> formKey = GlobalKey();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,37 +29,48 @@ class SignUpScreen extends StatelessWidget {
           ),
         ),
         
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextFormFieldWidget(label: 'First Name'),
-              SizedBox(height: 34.h),
-              TextFormFieldWidget(label: 'E-mail Address'),
-              SizedBox(height: 34.h),
-              TextFormFieldWidget(label: 'Password', secure: true,),
-              SizedBox(height: 100.h),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.symmetric(
-                        vertical: 17.5.h, horizontal: 40.w)),
-                onPressed: () {},
-                child: Row(
-                  children: [
-                    Text(
-                      'Create Account',
-                      style: Theme.of(context).textTheme.titleMedium,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+            child: Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              key: formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 50.h),
+                  TextFormFieldWidget(label: 'First Name'),
+                  TextFormFieldWidget(label: 'Last Name'),
+                  TextFormFieldWidget(label: 'User Name'),
+                  TextFormFieldWidget(label: 'E-mail Address'),
+                  TextFormFieldWidget(label: 'Password', secure: true,),
+                  SizedBox(height: 30.h),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(
+                            vertical: 17.5.h, horizontal: 40.w)),
+                    onPressed: () {
+                      if (formKey.currentState!.validate()){
+
+                      }
+                    },
+                    child: Row(
+                      children: [
+                        Text(
+                          'Create Account',
+                          style: Theme.of(context).textTheme.titleMedium,
+                        ),
+                        Spacer(),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 30.r,
+                        )
+                      ],
                     ),
-                    Spacer(),
-                    Icon(
-                      Icons.arrow_forward,
-                      size: 30.r,
-                    )
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
