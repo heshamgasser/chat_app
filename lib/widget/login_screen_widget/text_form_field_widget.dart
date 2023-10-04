@@ -6,13 +6,15 @@ import '../../style/app_colors.dart';
 class TextFormFieldWidget extends StatelessWidget {
  String label;
  bool secure;
+ TextEditingController controller;
 
 
- TextFormFieldWidget({required this.label, this.secure = false});
+ TextFormFieldWidget({required this.label, this.secure = false, required this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: (value) {
         if (value  == null || value.isEmpty){
           return 'Field Required';

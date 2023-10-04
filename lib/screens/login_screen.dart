@@ -1,4 +1,4 @@
-import 'package:chat_app/screens/sign_up_screen.dart';
+import 'package:chat_app/screens/sign_up/sign_up_screen.dart';
 import 'package:chat_app/style/app_colors.dart';
 import 'package:chat_app/widget/login_screen_widget/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
@@ -35,12 +35,12 @@ class LoginScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.displayLarge,
               ),
               SizedBox(height: 25.h),
-              TextFormFieldWidget(label: 'Email'),
+              // TextFormFieldWidget(label: 'Email'),
               SizedBox(height: 39.h),
-              TextFormFieldWidget(
-                label: 'Password',
-                secure: true,
-              ),
+              // TextFormFieldWidget(
+              //   label: 'Password',
+              //   secure: true,
+              // ),
               SizedBox(height: 20.h),
               TextButton(
                 onPressed: () {},
